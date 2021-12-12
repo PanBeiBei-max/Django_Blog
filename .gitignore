@@ -1,0 +1,4 @@
+#Virtual environment 虚拟环境
+venv
+#数据库文件
+db.sqlite3
