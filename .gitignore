@@ -2,4 +2,7 @@
 venv
 #数据库文件
 db.sqlite3
+#settings.py文件
 *settings.py
+#本地配置文件
+*local.py
