@@ -7,4 +7,4 @@ db.sqlite3
 #本地配置文件
 *local.py
 __pycache__/
-*.py[coa]
+*.py[cod]
