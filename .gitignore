@@ -8,3 +8,5 @@ db.sqlite3
 *local.py
 __pycache__/
 *.py[cod]
+#快速生成测试文件
+scripts/

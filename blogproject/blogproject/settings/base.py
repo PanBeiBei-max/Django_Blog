@@ -34,7 +34,14 @@ INSTALLED_APPS = [
     # 'blog',#注册blog应用
     'blog.apps.BlogConfig',#注册blog应用和应用设置
     'comments.apps.CommentsConfig',#注册comments应用和应用设置
+    'pure_pagination',#分页
 ]
+
+PAGINATION_SETTINGS = {
+    'PAGE_RANGE_DISPLAYED': 4, # 分页条当前页前后应该显示的总页数（两边均匀分布，因此要设置为偶数），
+    'MARGIN_PAGES_DISPLAYED': 1, # 分页条开头和结尾显示的页数
+    'SHOW_FIRST_PAGE_WHEN_INVALID': True, # 当请求了不存在页，显示第一页
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -12,7 +12,7 @@
                         datetime="{{ post.create_time }}">{{post.create_time }}</time></a></span>
                     <span class="post-author"><a href="#">{{ post.author }}</a></span>
                     <span class="comments-link"><a href="{{ post.get_absolute_url }}#comment-area"> {{ post.comment_set.count }} 评论</a></span>
-                    <span class="views-count"><a href="#">588 阅读</a></span>
+                    <span class="views-count"><a href="#">{{ post.views }} 阅读</a></span>
                 </div>
             </header>
             <div class="entry-content clearfix">
@@ -32,7 +32,7 @@
                                         <a href="#">下一页</a>
                                     </div>
                                     -->
-    <div class="pagination">
+    <!-- <div class="pagination">
         <ul>
             <li><a href="">1</a></li>
             <li><a href="">...</a></li>
@@ -44,5 +44,9 @@
             <li><a href="">...</a></li>
             <li><a href="">11</a></li>
         </ul>
-    </div>
+    </div> -->
+    {% if is_paginated %}
+        {{ page_obj.render }}
+    {% endif %}
+
 {% endblock main %}

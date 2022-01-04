@@ -73,6 +73,8 @@ class Post(models.Model):
     # 因为我们规定一篇文章只能有一个作者，而一个作者可能会写多篇文章，因此这是一对多的关联关系，和 
     # Category 类似。
     author = models.ForeignKey(User,on_delete=models.CASCADE)
+    #记录浏览量
+    views = models.PositiveIntegerField(default=0,editable=False)
 
     class Meta:
         #指定该表在admin后台显示的中文
@@ -106,3 +108,8 @@ class Post(models.Model):
     def get_absolute_url(self):
         #reverse第一个参数声明是blog应用下路由name为detail的url，kwargs传入参数
         return reverse('blog:detail',kwargs={'pk':self.pk})
+    
+    #views浏览量自动增长
+    def increase_views(self):
+        self.views += 1
+        self.save(update_fields=['views'])
