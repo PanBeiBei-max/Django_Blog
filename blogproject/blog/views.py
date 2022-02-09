@@ -6,7 +6,13 @@ from django.utils.text import slugify
 from markdown.extensions.toc import TocExtension
 from django.views.generic import DetailView,ListView
 from pure_pagination.mixins import PaginationMixin
-
+from rest_framework.versioning import BaseVersioning
+from rest_framework.views import APIView
+from rest_framework.negotiation import BaseContentNegotiation
+from rest_framework.parsers import JSONParser
+from rest_framework.serializers import Serializer
+from rest_framework.viewsets import ModelViewSet
+from rest_framework.authentication import BaseAuthentication
 # Create your views here.
 
 
