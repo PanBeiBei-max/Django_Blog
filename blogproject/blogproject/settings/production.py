@@ -12,8 +12,16 @@ ALLOWED_HOSTS = ['120.55.73.31','0.0.0.0:8000']
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
+        'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_blog',
+        'USER': 'root',
+        'PASSWORD': os.environ['MYSQL_PASSWORD'],
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
